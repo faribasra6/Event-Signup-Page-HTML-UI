@@ -1,0 +1,602 @@
+/* style.css - Improved Version */
+
+/* Global Styles */
+@font-face {
+    font-family: '29LT Bukra';
+    src: url('./29LT-Bukra.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.row1 {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.text-section {
+    flex: 1;
+    margin: 0;
+    min-width: 60%;
+    text-align: start;
+}
+
+.svgs-container {
+    display: flex;
+    justify-content: flex-end;  /* Aligns SVGs to the right */
+    gap: 0;  /* No gap between SVGs */
+    flex-wrap: wrap;  /* Allows SVGs to wrap when the screen is smaller */
+}
+
+.custom-svg {
+    width: 15vw;  /* Sets the width to 15% of the viewport width */
+    height: auto;  /* Adjusts the height proportionally */
+    max-width: 180px;  /* Ensures the SVG doesn't grow too large */
+    max-height: 160px;  /* Ensures the SVG doesn't grow too large */
+}
+
+@media (max-width: 1024px) {
+    .custom-svg {
+        width: 20vw;  /* Slightly larger on medium screens */
+        max-width: 160px;
+        max-height: 130px;
+       
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-svg {
+        width: 25vw;  /* Even larger on small screens */
+        max-width: 130px;
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-svg {
+        width: 30vw;  /* Makes the SVG 30% of the viewport width for very small screens */
+        max-width: 90px;
+        max-height: 80px;
+       
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row1 {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .svgs-container {
+        flex: 1;
+        justify-content: flex-end;
+    }
+}
+
+
+.styling{
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+html, 
+body {
+    background-color: #0c00aa; /* Darker blue with reduced opacity */
+    overflow-x: hidden;
+    color: white;
+    font-family: '29LT Bukra', sans-serif;
+   
+}
+
+/* Navbar Enhancements */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+/* Custom Navbar Toggler Icon */
+.navbar-toggler-icon-custom {
+    width: 2rem; /* Adjust as needed */
+    height: 2rem; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon-custom svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon-custom:hover svg {
+    transform: scale(1.1); /* Optional hover effect */
+}
+
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem 0;
+}
+
+.register-btn {
+    background-color: #ADD8E6;
+    color: #142ed6;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 5px 15px rgba(173, 216, 230, 0.4);
+}
+
+
+/*---------------------------- Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    background-size: cover;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 76%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+/* Hero Section Text */
+.hero-section h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    z-index: 2; /* Text stays on top */
+    position: relative;
+}
+
+.event-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 8rem;
+    font-size: 1.1rem;
+}
+
+
+/* -------------------------- Event Section */
+.event-overview{
+    overflow-x: hidden;
+}
+
+/* Right Column Styling */
+.position-relative {
+    position: relative;
+}
+
+/* Small SVG (6) */
+.small-svg {
+    position: relative;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+}
+
+/* Large SVG (9) */
+.large-svg {
+    position: relative;
+    z-index: 0;
+}
+
+/* Paragraph inside the large SVG */
+.svg-paragraph {
+    position: absolute;
+    top: 35%; /* Adjust positioning as needed */
+    left: 55%; /* Adjust positioning as needed */
+    transform: translate(-50%, -50%);
+    width: 60%; /* Adjust width as needed */
+    text-align: center;
+    z-index: 2;
+    
+}
+
+.svg-paragraph p {
+    font-size: 1.2rem; /* Font size relative to viewport width */
+    color: white; /* Text color */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .svg-paragraph p {
+        font-size: 1rem; /* Make the text slightly bigger on medium screens */
+    }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+    .svg-paragraph p {
+        font-size: 0.8rem; /* Larger text for small screens */
+    }
+}
+
+
+/* Custom Paragraph Styling */
+.text-justify {
+    text-align: justify;
+    hyphens: auto; /* Enable hyphenation for better word breaks */
+    line-height: 1.6; /* Improve readability with more line spacing */
+    font-size: 1.1rem; /* Slightly larger font size */
+}
+
+/* Responsive Width for Paragraph */
+@media (max-width: 768px) {
+    .text-justify {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+/* ---------------------------bubbles */
+
+.ellipse-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Aligns content to the end */
+    background-color: #142ed6;
+    padding-right: 60px; /* Adds space before the end */
+    align-items: center; /* Ensures ellipses are vertically aligned */
+    background-image: url('../images/Group.png'); /* Replace with the actual image path */
+    background-position: left bottom; /* Positions the image at the left bottom */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: contain; /* Adjusts the image size to fit the container */
+}
+
+.ellipse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    color: black;
+    border-radius: 50%;
+    width: auto;
+    min-width: 120px;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    word-wrap: break-word;
+    white-space: normal;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+
+.ellipse1 { background-color: #FFFFFF; }
+.ellipse2 { background-color: #D9D9D9; }
+.ellipse3 { background-color: #FFFFFF; }
+.ellipse4 { background-color: #ADEDEA; }
+.ellipse5 { background-color: #ADEDEA; }
+.ellipse6 { background-color: #33FFF3; }
+
+.small { 
+    width: 100px; 
+    height: 100px; 
+}
+
+.medium { 
+    width: 180px; 
+    height: 180px; 
+}
+
+.large { 
+    width: 250px; 
+    height: 250px; 
+}
+
+.subhead {
+    width: 50%;
+    font-family: '29LT Bukra', sans-serif;
+    
+}
+
+@media (max-width: 768px) {
+    .ellipse {
+        min-width: 100px;
+        /* Slightly smaller font for mobile */
+
+    }
+
+    .small { 
+        width: 80px; 
+        height: 80px; 
+    }
+
+    .medium { 
+        width: 120px; 
+        height: 120px; 
+    }
+
+    .large { 
+        width: 180px; 
+        height: 180px; 
+    }
+
+
+    
+    .ellipse p {
+        font-size: 0.6rem; /* Ensures that the <p> tag also uses the font size */
+    }
+    
+    .subhead , .mhead{
+        
+        margin: 0 6%;
+        width: 80%;
+        font-family: '29LT Bukra', sans-serif;
+        
+    }
+    
+}
+/* -------------------------slider */
+.swiper-slide img {
+    width: 100%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    border-radius: 20px;
+    opacity: 0.4; /* Lower opacity for non-active slides */
+    min-height: 350px;
+    object-fit: cover;
+    position: relative; /* Ensure z-index works */
+    z-index: 0; /* Non-active slides have lower z-index */
+    transform: scale(1); /* Reduce size of non-active images */
+}
+@media (max-width: 768px) {
+    .swiper-slide img {
+        min-height: 150px; /* Adjust height for smaller screens */
+    }
+}
+
+.swiper-slide-active img {
+    width: 100%;
+    transform: scale(2); /* Zoom effect for the active slide */
+    opacity: 1 !important; /* Full opacity for the active slide */
+    z-index: 3; /* Ensure the active slide image is on top */
+}
+
+.swiper-section {
+    background-color: #064AD2; /* Background color for the section */
+    padding: 20px; /* Adds padding to the section */
+}
+
+.swiper-container {
+    width: 100%; /* Ensures the swiper container takes full width */
+    max-width: 1200px; /* You can adjust this based on your desired max width */
+    margin: 0 auto; /* Centers the swiper container */
+}
+
+
+
+
+  .swiper-container {
+    overflow: hidden;
+    max-width: 90%; /* Limit container width for responsiveness */
+    margin: auto;
+}
+
+
+/* Grid System for Highlights */
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+
+   /* Overall container with relative position for SVG placement */
+   .timeline-container {
+    position: relative;
+    margin: 0 20px;
+    left: 10%;
+}
+
+/* Smaller SVG at the top-left */
+.smaller-svg {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    width: 8%;
+    height: 122px;
+}
+
+/* Larger SVG at the bottom-right */
+.larger-svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 50%; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Timeline styling */
+.wrapper {
+    padding-left: 40px;
+}
+
+.sessions {
+    list-style: none;
+    padding: 0;
+    width: 50%;
+}
+
+li {
+    padding-bottom: 1.5rem;
+    border-left: 6px solid #ADEDEA;
+    position: relative;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.app_color {
+    font-family: '29LT Bukra', sans-serif;
+    color: #ADEDEA;
+    font-weight: 600;
+    
+    
+}
+
+
+/* Adjust for medium screens */
+@media (max-width: 1024px) {
+    .app_color {
+        font-size: 1.8rem; /* Slightly smaller text for medium screens */
+        padding-left: 15px; /* Reduced padding on medium screens */
+    }
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+    .app_color {
+        font-size: 1.5rem; /* Even smaller text for small screens */
+        padding-left: 10px; /* Reduced padding for small screens */
+    }
+}
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+    .app_color {
+        font-size: 1.2rem; /* Smallest text size for very small screens */
+        padding-left: 5px; /* Minimal padding on small screens */
+    }
+}
+.rang{
+    color: #ADEDEA;
+}
+
+
+li:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #ADEDEA;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 0;
+}
+
+/* Time styling */
+
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .smaller-svg {
+        width: 40px;
+        height: 60px;
+        align-items: start;
+    }
+
+    .larger-svg {
+        width: 40%;
+    }
+
+    .time {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+}
+.bold-text {
+    font-weight: bold;
+}
+
+.time {
+    font-family: '29LT Bukra', sans-serif;
+    color: #ADEDEA;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+.sub {
+    font-family: '29LT Bukra', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+
+
+
+
+.registration-container {
+    border-radius: 1rem;
+    max-width: 90%;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .timeline::after {
+        left: 2rem;
+    }
+
+    .timeline-event {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .timeline-event::after {
+        left: -10px !important;
+        right: auto;
+    }
+}
+
+.custom-input {
+    border-radius: 24px; /* Customize the roundness as needed */
+    background-color: white; /* Ensure the background is white */
+    padding: 0.8rem;
+}
